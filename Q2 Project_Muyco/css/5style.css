@@ -1,0 +1,135 @@
+* {
+	box-sizing:border-box;
+	text-decoration: none;
+	font-family:Goudy Old Style;
+}
+
+nav{
+	text-align: center; 
+	background-color: white;
+	position:fixed;
+	padding: 5px; 
+	top:0;
+	width:100%;
+	border-bottom: double; 
+}
+.H-icon{
+	margin: 0px 50px 0px 50px;
+	transition: 0.5s;
+	border-radius:50%;
+}
+.H-icon:hover {
+	border-style: outset;
+}
+.A-icon{
+	margin: 0px 50px 0px 50px;
+	transition: 0.5s;
+	border-radius:50%;
+}
+.A-icon:hover {
+	border-style: outset;
+}
+.S-icon{
+	margin: 0px 50px 0px 50px;
+	transition: 0.5s;
+	border-radius:50%;
+}
+.S-icon:hover {
+	border-style: outset;
+}
+
+.logo{
+	position: fixed; 
+	float: left;   
+	top: 10px; 
+	left: 20px; 
+	z-index: 2;
+}
+.duck{
+	position: fixed; 
+	float: left;   
+	z-index: 2;
+	left: 1000px; 
+	top:5px; 
+	
+}
+.duck:hover{
+	transform:scale(2);
+}
+.duckjr{
+	position: fixed; 
+	float: left;   
+	z-index: 2;
+	left: 1000px; 
+	top:150px;
+	border: 2px double white;
+	background:rgba(248, 236, 254, 0.54);
+	
+}
+#cats{
+	text-align: center; 
+	margin-top: 58px;
+	font-size:22px;
+	color: black; 
+	border-bottom-style: double;  
+	padding: 20px; 
+	z-index:1; 
+	background:url("https://i.pinimg.com/originals/53/15/0f/53150fac0eec44caa08030989d9562f8.gif");
+	background-repeat:no-repeat;
+	background-size: 100%;
+	
+
+}
+span{
+	margin: 15px; 
+	border:2px outset white; 
+	padding: 5px; 
+}
+span:hover{
+	border:2px outset #ECDDFF;
+	background-color:rgba(243, 48, 106, 0.32);
+	
+}
+
+#content{
+	background:url("https://i.pinimg.com/originals/6a/42/9a/6a429af860c91ed307ca581707c21b6c.gif");
+	font-size: 15px; 
+	text-align: center; 
+}
+#box{
+	width: 25%;
+	float: left;
+	font-size: 20px; 
+
+}
+
+#items{
+	border: 5px outset white; 
+	padding: 10px; 
+	margin: 10px 10px 10px 10px; 
+	background-color:rgba(248, 236, 254, 0.54);
+	
+}
+#items:hover{
+	border: 5px outset #ac9ae0;
+}
+.pic{
+	border: 5px double #ECDDFF;
+}
+a{
+	color: black; 
+}
+audio{
+	border: 5px outset pink;
+}
+
+footer{
+	position: relative;
+	top: 15px;
+	padding: 20px; 
+	text-align: center; 
+	font-size: 15px; 
+	background: white; 
+	border-top-style: double; 
+	clear:both;
+}
