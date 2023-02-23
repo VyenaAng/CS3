@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Second Page</title>
+	<style>
+	*{
+	text-align: center; 
+	}
+		#pics {
+			border: outset lightgray 3px; 
+		}
+	</style>
+	<script>
+		function pic1() {
+			document.getElementById("pics").src = "https://i.pinimg.com/originals/67/fe/b4/67feb4fd774a51c870131d934907e13d.gif";
+		}
+		function pic2() {
+			document.getElementById("pics").src = "https://i.pinimg.com/originals/e3/5d/48/e35d48a120fa5b4fecdaa13f44f09d1b.gif";
+		}
+	</script>
+</head>
+<body>
+<h1> GIFS!!</h1> 
+	<img id="pics" src="https://i.pinimg.com/originals/e3/5d/48/e35d48a120fa5b4fecdaa13f44f09d1b.gif">
+	<br>
+	<button onclick="pic1()">A New GIF!!</button>
+	<button onclick="pic2()">The Original!!</button>
+</body>
+</html>
