@@ -4,13 +4,12 @@
   <title>Formative Assessment 10 | Muyco</title>
 </head>
 <body>
-  <h1>Formative Assesment 10</h1>
-  <button onclick="generateNum()">Click here to have a random number!</button>
+  <button onclick="genNum()">Click here to have a random number!</button>
   <h3> <p id="rand"></p></h3>
   <h3><p id="pVal"></p><h3>
 
   <script>
-    function generateNum() {
+    function genNum() {
       let rand = Math.floor(Math.random() * 1000);
       document.getElementById("rand").textContent = `Randoml Number: ${rand}`;
 
