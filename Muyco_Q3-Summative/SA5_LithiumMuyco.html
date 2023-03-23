@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Viena's Online Shop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+      span {color: blue; text-decoration:underline}
+      button {width: 100px; padding: 5px; background: pink;}
+	</style>
+
+	</head>
+<body>
+	<h1> Welcome to Viena's Online Shop</h1>
+	<h2> Please select from the following items </h2>
+	<ol>
+		<li> Vanilla Ice cream  price: 100.00 </li>
+		<li> Chocolate Ice cream  price: 125.00 </li>
+		<li> Strawberry Ice cream price: 150.00 </li>
+	</ol>
+    <p> Item selected : <span id="item"> </span> </p>
+	<p> Qty bought : <span id="qty"> </span> </p>
+	<p> Amount to pay for the item: <span id="bill"> </span> </p>
+	<p> Current Total Bill: <span id="tbill"> </span> </p>
+	<button onclick="buyAnItem()"> Buy an Item </button>
+	<button onclick="clearEv()"> Clear </button>
+    
+    <script>
+	//Declaring the needed variables
+	var itemSelected = 0; 
+	var cQty = 0; 
+	var cPrice = 0; 
+	var amtoPay = 0; 
+	var cTotBill = 0; 
+	
+	//To prompt for item number and quantity
+	function buyAnItem(){
+		var itNum = prompt("Enter your item  number (1, 2, 3): ");
+		var itQty = prompt("Enter the quantity: "); 
+	
+	//To validate if the user's input is an integer
+	if (Number.isInteger(parseInt(itQty))) {
+	cQty = parseInt(itQty); 
+	
+	switch(itNum) { 
+	case '1':
+		itemSelected = "Vanilla Ice cream"; 
+		cPrice = 100.00;
+		break; 
+		
+	case '2': 
+		itemSelected = "Chocolate Ice cream"; 
+		cPrice = 125.00;
+		break; 
+		
+	case '3':
+		itemSelected = "Strawberry Ice cream"; 
+		cPrice = 150.00;
+		break; 
+		
+	default:
+		alert("Your item number is invalid. Please only choose from 1, 2, 3"); 
+		return; 
+	}
+	
+	//To calculate the total Amount to pay 
+	var amtoPay = cPrice * cQty; 
+	
+	//To Display the values 
+	document.getElementById("item").innerHTML = itemSelected; 
+	document.getElementById("qty").innerHTML = cQty; 
+	document.getElementById("bill").innerHTML = amtoPay.toFixed(2); 
+	
+	//To display the current total bill
+	cTotBill += amtoPay; 
+	document.getElementById("tbill").innerHTML = cTotBill.toFixed(2); 
+	}
+	else {
+	alert("The quantity you have entered is invalid"); 
+	}
+	}
+	
+	//Function for the clear button
+	function clearEv() {
+	 cQty = 0; 
+	 cPrice = 0; 
+	 amtoPay = 0; 
+	 cTotBill = 0; 
+	document.getElementById("item").innerHTML =""; 
+	document.getElementById("qty").innerHTML =""; 
+	document.getElementById("bill").innerHTML =""; 
+	document.getElementById("tbill").innerHTML =""; 
+	
+		
+	}
+    
+    </script>
+</body>
+
+</html>
+

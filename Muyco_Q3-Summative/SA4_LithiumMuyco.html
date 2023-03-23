@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Car Deprecation Calculator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        	body {background: lightblue; 
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Car Depreciation Calculator </h1>
+	<h2> Your Car Model: <span id="model"> </span></h2>
+    <h2> Car Cost: <span id="cost"> </span></h2>
+    <h2> Age of your Car: <span id="age"> </span></h2>
+    <h2> Good Condition?: <span id="condition"> </span></h2>
+    <h2> Your Car's Current Market Value: <span id="currentvalue"> </span></h2>
+    
+    <button onclick="enterCar()"> Enter your Car information </button>
+    <script>
+		var currentMV = "0"; 
+    	//enterCar Function
+    	function enterCar() {
+        	var carModel = prompt("Enter Car Model");
+            var  carCost = prompt("Enter Cost of the Car");
+            var  carAge = prompt("How old is your car?");
+            var  good = confirm("In Good Condition? Ok for Yes / Cancel for No");
+            model.innerHTML = carModel;
+            cost.innerHTML = carCost;
+            age.innerHTML = carAge;
+            condition.innerHTML = (good) ? "Yes" : "No";   
+			computeMarketValue(parseFloat(carCost),parseFloat(carAge),good)
+		}
+    
+		//To compute Current Market Value
+		function computeMarketValue(carCost,carAge,good) {
+			if (carAge > 10) {
+			currentMV = 70000;
+			
+        }
+			else if (carAge >= 8) {
+			currentMV = 100000; 
+		}
+			else if (carAge >= 5) { 
+			currentMV = 0.25 * carCost; 
+		}
+			else {
+			currentMV = 0.5 * carCost; 
+		}
+		
+			if (good==false) {
+			currentMV = currentMV * 0.90;
+		}
+		//To display current market value
+		document.getElementById("currentvalue").innerHTML = currentMV; 
+		}
+		
+			
+			
+		
+    </script>
+    
+</body>
+</html>
+
