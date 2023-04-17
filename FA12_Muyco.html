@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Multiplication Table</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+	<style> 
+	table, th, td { 
+		border: 1px solid black;
+		text-align: center; 
+	}
+	
+	
+	</style> 
+	<body> 
+	<p>[enter a number between 2 and 10]</p>
+	<br>
+	<input type="text" id="col"> by <input type="text" id="row"></br> 
+	<br><input type="button" value="Click here to get your multiplication table!" onClick="mulTable()"><br> 
+	<br><table  id="table"></table>
+	
+	</body> 
+	<script> 
+	
+	function mulTable(){
+	var r = document.getElementById('col').value; 
+	var c = document.getElementById('row').value; 
+	var mulTable  = "<table>";
+    mulTable  = mulTable  + "<tr></th>";
+	
+	if (( r >= 2 && c <= 10) && ( c >= 2 && r <= 10)){
+   mulTable  = mulTable  + "</tr>";
+   for ( var y=1; y<=r;y++) {
+      mulTable  = mulTable  + "<tr>";
+
+      for ( var x=1; x<=c; x++) {
+         mulTable  = mulTable  + "<td>" + (x*y) + "</td>";
+      }
+
+      mulTable  = mulTable  + "</tr>"; 
+   }
+
+   mulTable  = mulTable  + "</table>"; 
+   document.getElementById('table').innerHTML = mulTable ;
+
+}
+	else{
+	alert("Please enter a number between 2 and 10 only. Please try again, thank you!!");
+	}
+	
+}
+	
+
+	</script> 
+	
+	
+			
+</html>
