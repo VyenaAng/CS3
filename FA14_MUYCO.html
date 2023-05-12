@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Forms</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+	
+	<style> 
+
+	body {
+	background:url("https://i.pinimg.com/originals/d0/58/3b/d0583b414f99249e7b4e74066f35af3f.gif"); 
+	background-size: cover;
+	background-repeat: no-repeat; 
+	}
+	
+	form { 
+	background:url("https://i.pinimg.com/originals/08/91/d3/0891d3caa9194495b0fd8b0c3286c99e.gif"); 
+	background-repeat: no-repeat; 
+	float:left; 
+	background-size: cover; 
+	margin-left: 33.33%;
+	margin-top: 0px; 
+	clear: both; 
+	padding: 20px; 
+	background-color: white; 
+	opacity: 0.8;
+	color: black;
+	border: 5px outset pink; 
+	border-radius: 5%;
+	
+	}
+
+	Fieldset {
+	background:url("https://i.pinimg.com/originals/08/91/d3/0891d3caa9194495b0fd8b0c3286c99e.gif"); 
+	background-repeat: no-repeat; 
+	margin-top: 50px; 
+	background-color: white; 
+	float: left; 
+	margin-left: 33.33%; 
+	padding: 10px 200px 10px 10px;
+	opacity: 0.8; 
+	border: 5px outset pink; 
+	border-radius: 5%;
+	text-align: justify; 
+	
+	}
+	
+	#header {
+	font-size: 50px; 
+	text-align: center; 
+	color: white;  
+	}
+	
+	legend {
+	border: 2px outset pink; 
+	border-radius: 5%; 
+	padding: 5px; 
+	background-color: white; 
+	
+	}
+	#s {
+	text-indent: 20px; 
+	}
+	
+	
+	</style> 
+	
+	<body> 
+	<div id="header" >Sign up here!</div>
+	<form onsubmit = "return displayFunction ()"> <p id="content">
+	<div id="ques"> <label for="name">Enter your full name: </label><br>
+	<input type="text" id="name" onblur="redFunction('name')" onfocus="greenFunction('name')"> </div>
+	<br> 
+	<div id="ques"><label for="uName">Enter a fun username: </label> <br>
+	<input type="text" id="uname" onblur="redFunction('uname')" onfocus="greenFunction('uname')"> </div>
+	<br> 
+	<div id="ques"><label for="Gender">Gender: </label> <br>
+	<select id="gender" name="Gender" onblur="redFunction('gender')" onfocus="greenFunction('gender')"> </div>
+	<option>Male</option> 
+	<option>Female</option> 
+	<option> Prefer not to mention</option> 
+	</select> </div>
+	<br> 
+	<div id="ques"><label for="Password">Enter your password: </label> <br>
+	<input type="password" id="password" name="password" onblur="redFunction('password')" onfocus="greenFunction('password')"></div>
+	<br>
+	<div id="ques"><label for="email"> Email Address: </label> <br>
+	<input type="email" id="email" onblur="redFunction('email')" onfocus="greenFunction('email')" cols ="0" ></div>
+	<br> 
+	<div id="ques"><label for="adress"> Address: </label> <br>
+	<textarea id="address" rows="2" cols="40" onblur="redFunction('address')" onfocus="greenFunction('address')"></textarea> </div>
+	<br> 
+	<div id="ques"><label for="shortPar"> Enter a short paragraph to describe yourself: </label><br> 
+	<textarea id="par" rows="5" cols="50" onblur="redFunction('par')" onfocus="greenFunction('par')"></textarea> </div>
+	<br><br>
+	<span id="ques"><input type="submit" value="Submit"></span>
+	<span id="ques"><input type="reset" value="Reset" onclick="resetFunction()"></span>
+	</form> 
+	</p>
+	<br><br>
+	<p>
+	<div id="inputs" style="display: none;">
+	
+	<Fieldset> 
+	<legend>Here are your inputs:</legend> 
+	Name: <span id = "n"></span>
+	<br> <br>
+	Username: <span id = "u"></span>
+	<br><br>
+	Gender: <span id = "g"></span>
+	<br><br>
+	Password: <span id = "p"></span>
+	<br><br>
+	Email: <span id = "e"></span>
+	<br><br>
+	Adress: <span id = "a"></span>
+	<br><br>
+	Short Description:<br> <span id = "s"></span>
+	<br>
+	</Fieldset>
+	</div>
+	
+	
+	
+	</p>
+	</body> 
+	<script> 
+	
+	
+	function redFunction(y){ 
+	var input = document.getElementById(y).value;
+	if (input === "") {
+	document.getElementById(y).style.borderColor = "red"; 
+	}
+	}
+	
+	function greenFunction(y) { 
+	var input = document.getElementById(y).value;
+	document.getElementById(y).style.borderColor = "green";
+	}
+	
+	function resetFunction() { 
+	document.getElementById("name").style.borderColor = "";
+	document.getElementById("uname").style.borderColor = "";
+	document.getElementById("gender").style.borderColor = "";
+	document.getElementById("password").style.borderColor = "";
+	document.getElementById("email").style.borderColor = "";
+	document.getElementById("address").style.borderColor = "";
+	document.getElementById("par").style.borderColor = "";
+	document.getElementById("n").innerHTML = ""; 
+	document.getElementById("u").innerHTML = ""; 
+	document.getElementById("g").innerHTML = ""; 
+	document.getElementById("p").innerHTML = ""; 
+	document.getElementById("e").innerHTML = ""; 
+	document.getElementById("a").innerHTML = ""; 
+	document.getElementById("s").innerHTML = ""; 
+	document.getElementById('inputs').style.display = "";
+	
+	
+	}
+	
+	function displayFunction () { 
+	var x = document.getElementById("name").value; 
+	document.getElementById("n").innerHTML = x; 
+	document.getElementById('inputs').style.display = "block";
+	var y = document.getElementById("uname").value; 
+	document.getElementById("u").innerHTML = y; 
+	var z = document.getElementById("gender").value; 
+	document.getElementById("g").innerHTML = z; 
+	var a = document.getElementById("password").value; 
+	document.getElementById("p").innerHTML = a; 
+	var b = document.getElementById("email").value; 
+	document.getElementById("e").innerHTML = b 
+	var c = document.getElementById("address").value; 
+	document.getElementById("a").innerHTML = c; 
+	var d = document.getElementById("par").value; 
+	document.getElementById("s").innerHTML = d; 
+	return false; 
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	</script> 
+</html> 
